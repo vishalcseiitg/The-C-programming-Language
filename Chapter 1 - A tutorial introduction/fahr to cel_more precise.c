@@ -33,3 +33,17 @@ int main(){
 %s for string
 
 */
+
+//Writing the same code by using the for loop;
+
+#include <stdio.h>
+
+int main(){
+    float fahr , celsius;
+    int upper = 300;
+    for(float fahr = 0 ; fahr<=upper ; fahr = fahr+20){
+        celsius = (5.0/9) * (fahr-32);
+        printf("%3.0f\t%6.1f\n" , fahr , celsius);
+    }
+}
+
