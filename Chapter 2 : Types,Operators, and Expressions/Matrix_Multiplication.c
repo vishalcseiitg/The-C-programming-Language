@@ -8,6 +8,8 @@ int main(){
 
     int arr[MAX][MAX];
     int brr[MAX][MAX];
+    int product[MAX][MAX];
+    int sum = 0;
     int arows , acolumns;
     int brows , bcolumns;
 
@@ -36,9 +38,6 @@ int main(){
         }
     }
 }
-
-    int product[MAX][MAX];
-    int sum = 0;
 
     for(int i = 0 ; i < arows ; i++){
         for(int j = 0 ; j < bcolumns ; j++){
