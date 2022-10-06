@@ -9,7 +9,7 @@ int main(){
 
     int arows , acolumns;
     int brows , bcolumns;
-    int sum = 0;
+    int sum = 0; //initialise the sum to be 0;
 
     printf("Enter rows and columns in Matrix A: \n");
     scanf("%d %d" , &arows , &acolumns);
