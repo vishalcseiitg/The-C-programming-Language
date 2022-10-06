@@ -1,61 +1,58 @@
 #include <stdio.h>
-
 #define MAX 50
-
-//matrix multiplication by taking values from the user:
 
 int main(){
 
-    int arr[MAX][MAX];
-    int brr[MAX][MAX];
+    int matrix_a[MAX][MAX];
+    int matrix_b[MAX][MAX];
     int product[MAX][MAX];
-    int sum = 0;
+
     int arows , acolumns;
     int brows , bcolumns;
+    int sum = 0;
 
-    printf("Rows and Columns in Matrix A: \n");
-        scanf("%d %d" , &arows , &acolumns);
+    printf("Enter rows and columns in Matrix A: \n");
+    scanf("%d %d" , &arows , &acolumns);
 
-    printf("Rows and Columns in matrix B: \n");
-        scanf("%d %d" , &brows , &bcolumns);
+    printf("The elements of matrix A are: \n");
 
-    printf("Enter the elements of matrix A: \n");
-
-    for(int i = 0 ; i < arows ; i++){
+    for(int i = 0 ; i <arows ; i++){
         for(int j = 0 ; j < acolumns ; j++){
-            scanf("%d" , &arr[i][j]);
+            scanf("%d" , &matrix_a[i][j]);
         }
     }
 
-    if(brows != acolumns){
-        printf("Matrix Multiplication not possible ");
-    }
-    else{
-    printf("Enter the elements of Matrix B: \n");
+    printf("Enter rows and columns in matrix B: \n");
+    scanf("%d %d" , &brows , &bcolumns);
+
+    printf("The elements of matrix B are: \n");
+
     for(int i = 0 ; i < brows ; i++){
         for(int j = 0 ; j < bcolumns ; j++){
-            scanf("%d " , &brr[i][j]);
+            scanf("%d" , &matrix_b[i][j]);
         }
     }
-}
 
-    for(int i = 0 ; i < arows ; i++){
-        for(int j = 0 ; j < bcolumns ; j++){
-            for(int k = 0 ; k <brows ; k++){
-                sum = sum + arr[i][k] * arr[k][j];
+    if(arows!=bcolumns){
+        printf("Matrix multiplication is not possible");
+    }
+    else{
+        for(int i = 0 ; i <arows ; i++){
+            for(int j = 0 ; j <bcolumns ; j++){
+                for(int k = 0 ; k <brows ; k++){
+                    sum = sum + matrix_a[i][k] * matrix_b[k][j];
+                }
+                product[i][j] = sum;
+                sum = 0;
             }
-
-            product[i][j] = sum;
-            sum = 0;
         }
     }
 
-    printf("Resultant Matrix: \n");
-
-    for(int i = 0 ; i < arows ; i++){
+    printf("The required matrix is:\n");
+    for(int i = 0 ; i <arows ; i++){
         for(int j = 0 ; j < bcolumns ; j++){
             printf("%d " , product[i][j]);
         }
+        printf("\n");
     }
-
 }
