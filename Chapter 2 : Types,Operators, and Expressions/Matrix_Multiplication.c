@@ -53,6 +53,6 @@ int main(){
         for(int j = 0 ; j < bcolumns ; j++){
             printf("%d " , product[i][j]);
         }
-        printf("\n");
+        printf("\n"); //for priting new line as matrix looks like
     }
 }
